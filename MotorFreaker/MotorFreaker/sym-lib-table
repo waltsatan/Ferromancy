@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "MotorFreaker")(type "KiCad")(uri "${KIPRJMOD}/MotorFreaker.kicad_sym")(options "")(descr ""))
+)
