@@ -9,11 +9,11 @@
  *  to be send separately.
  */
 
-#define CS    PA1 //PB3     // Chip select
+#define CSp    PA1 //PB3     // Chip select
 #define LED   PA7 //PB4     // Test LED
 #define DO    PA5     // MISO or Data Out
 #define USCK  PA4     // Clock
-
+#include <wiring_private.h>
 // Variable use in Interrupt need to be volotile to tell the compiler, they may be altered in other functions than in Main loop.
 // Otherwise the compiler could remove or replace them with a constant:
 
@@ -33,26 +33,26 @@ byte * humPTR  = (byte*) &humidity;
 void setup (void)
 {
   cli();                              // Deactivate Interrupts
-  pinMode(LED, OUTPUT);
+ // pinMode(LED, OUTPUT);
   DDRA |= 1<<LED;                     // Set PB1 as output (LED on Trinket) / PB0 will be the Input for the Interrupt
   DDRA |= 1<<DO;                      // MISO Pin has to be an output
 
   USICR = ((1<<USIWM0)|(1<<USICS1));  // Activate 3- Wire Mode and use of external clock but NOT the interrupt at the Counter overflow (USIOIE)
   
-  PORTA |= 0<<LED;                    // Turn PB1 off
-  PORTA |= 1<<CS;                     // Activate Pull-Up resistor on PB0
+  PORTA |= 1<<LED;                    // Turn PB1 off
+  PORTA |= 1<<CSp;                     // Activate Pull-Up resistor on PB0
   
- // PCMSK1|=1<<CS;                       // Active Interrupt on PB1
-  //GIMSK|=1<<PCIE;                     // General Interrupt Mask Register / PCIE bit activates external interrupts
-//GIMSK  = 0b00010000;  
-  GIMSK = (1 << PCIE0);
-    PCMSK0 = (1 << CS);
+   GIMSK = (1 << PCIE0);
+    PCMSK0 = (1 << CSp);
 
   delay(500);
-  //digitalWrite(LED, HIGH);
-  sei();         
-  //PORTA^= 1<<LED;    
-  analogWrite(LED,10);                  
+  digitalWrite(7, HIGH);
+      
+ // PORTA^= 1<<LED;    
+  //PORTA= 1<<LED;
+  //pinMode(7,OUTPUT);    
+  //analogWrite(7,150);    
+   sei();                  
 }  // end of setup
 
 
@@ -60,7 +60,8 @@ void setup (void)
 
 ISR(PCINT0_vect)
   {    
-    if((PINA & (1<<CS))== 0){
+    //PORTA= 0<<LED;  
+    if((PINA & (1<<CSp))== 0){
       
       // If edge is falling, the command and index variables shall be initialized
       // and the 4-bit overflow counter of the USI communication shall be activated:
@@ -73,8 +74,7 @@ ISR(PCINT0_vect)
       // XOR operation to turn PB3 (LED) on/off. (Not needed for USI)
       
       //PORTA^= 1<<LED;  
-    }
-    else{
+    } else{
 
       // If edge is rising, turn the 4-bit overflow interrupt off:
       
@@ -99,18 +99,16 @@ ISR(USI_OVF_vect)
           break;
         case 'L': {
             ana = USIDR;      // Read in from USIDR register
-             analogWrite(LED,ana);
+            // analogWrite(7,ana);
+            sbi(TCCR0A, COM0B1); 
+            OCR0B = ana; 
+            //PORTA= 0<<LED;  
             USISR = 1<<USIOIF;  // Clear Overflow bit
             reqID=0;
             break;
 
         }
-        case 'M': {
-          analogWrite(LED,ana);
-          reqID=0;
-          break;
-
-        }
+        
         case 'T':
 
           // Write value to send back into USIDR and clear the overflow bit:

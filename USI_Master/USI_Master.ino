@@ -168,6 +168,6 @@ void loop (void)
  // Serial.print(hum, DEC);
   //Serial.println(); 
 
-  delay(10);
+  delay(1);
   
 }  // end of loop
