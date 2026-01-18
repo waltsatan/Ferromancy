@@ -53,7 +53,7 @@ void start() {
 	sei(); // allow interrupts
 }
 
-bool active=true;
+bool active=false;
 
 void toggle() {
 //	if ( debounce() ) {

@@ -66,22 +66,22 @@ byte receiveInt(const char reqID){
 bool sendInt(const char reqID, byte b){
    
   PORTC &= ~(1<<CS); 
-  delayMicroseconds(20);            // Give the slave some time to digest
+  delayMicroseconds(100);            // Give the slave some time to digest
 
   
   // Send out the reqID
   SPDR = reqID;
   /* Wait for transmission complete */
   while(!(SPSR & (1<<SPIF)))
-  delayMicroseconds(20);           // Give the slave some time to digest
+  delayMicroseconds(100);           // Give the slave some time to digest
 
   // Receive 1st byte. The '11' is not considered from the slave, however this step is necessary to initiate the transmission.
   SPDR = b;                      
   /* Wait for transmission complete */
   while(!(SPSR & (1<<SPIF)))
   //i = SPDR;                 // put the byte index 0 of the 'byte array' = float
-  delayMicroseconds(20);
- Serial.println(b);
+  delayMicroseconds(100);
+ //Serial.println(b);
   PORTC |= (1<<CS);             // Set chip select high and stop communication
 
    
@@ -148,8 +148,9 @@ void setup (void)
   DDRC |= (1<<DDC0);            // datadrection for chip select is not in initSPI()
 }  
 byte a=120;
+void loop2() {}
 
-void loop (void)
+void loop(void)
 {
   sendInt('L',a);
   a++;
@@ -168,6 +169,6 @@ void loop (void)
  // Serial.print(hum, DEC);
   //Serial.println(); 
 
-  delay(1);
+  delay(10);
   
 }  // end of loop

@@ -9,7 +9,7 @@
  *  to be send separately.
  */
 
-#define CSp    PA1 //PB3     // Chip select
+#define CSp    PB0//PA0 //PB3     // Chip select
 #define LED   PA7 //PB4     // Test LED
 #define DO    PA5     // MISO or Data Out
 #define USCK  PA4     // Clock
@@ -40,13 +40,21 @@ void setup (void)
   USICR = ((1<<USIWM0)|(1<<USICS1));  // Activate 3- Wire Mode and use of external clock but NOT the interrupt at the Counter overflow (USIOIE)
   
   PORTA |= 1<<LED;                    // Turn PB1 off
-  PORTA |= 1<<CSp;                     // Activate Pull-Up resistor on PB0
+  PORTB |= 1<<CSp;                     // Activate Pull-Up resistor on PB0
   
-   GIMSK = (1 << PCIE0);
-    PCMSK0 = (1 << CSp);
+   GIMSK = (1 << PCIE1);
+    PCMSK1 = (1 << CSp);
+sei();
 
-  delay(500);
+ delay(200);
   digitalWrite(7, HIGH);
+   delay(500);
+   digitalWrite(7, LOW);
+   delay(500);
+  digitalWrite(7, HIGH);
+   delay(500);
+  digitalWrite(7, LOW);
+   delay(500);
       
  // PORTA^= 1<<LED;    
   //PORTA= 1<<LED;
@@ -58,10 +66,10 @@ void setup (void)
 
 // Interrupt routine at the CS pin. Always executed when value on CS pin changes:
 
-ISR(PCINT0_vect)
+ISR(PCINT1_vect)
   {    
     //PORTA= 0<<LED;  
-    if((PINA & (1<<CSp))== 0){
+    if((PINB & (1<<CSp))== 0){
       
       // If edge is falling, the command and index variables shall be initialized
       // and the 4-bit overflow counter of the USI communication shall be activated:
