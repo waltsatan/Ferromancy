@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "zz")(type "Legacy")(uri "${KIPRJMOD}/footprints/1548376.mod")(options "")(descr ""))
+  (lib (name "Amphenol_QT")(type "KiCad")(uri "${KIPRJMOD}/footprints/QT02ADP83H0000G.pretty/")(options "")(descr ""))
+)

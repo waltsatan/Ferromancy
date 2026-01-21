@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP QT02ADP83H0000G
+D 2 Position Wire to Board Terminal Block Horizontal with Board 0.197" (5.00mm) Through Hole, 300V, 16A, 12-24 AWG, -20C ~ 105C
+K
+F https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6823/QTxxADPx%20x%20H%20xxxxG%205.0mm%20pitch%20%28Double-Pole%20%20Soldering%20Foot%29.pdf
+$ENDCMP
+#
+#End Doc Library

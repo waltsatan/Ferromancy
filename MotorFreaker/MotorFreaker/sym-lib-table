@@ -1,4 +1,6 @@
 (sym_lib_table
   (version 7)
   (lib (name "MotorFreaker")(type "KiCad")(uri "${KIPRJMOD}/MotorFreaker.kicad_sym")(options "")(descr ""))
+  (lib (name "Z")(type "KiCad")(uri "${KIPRJMOD}/footprints/1548376.kicad_sym")(options "")(descr ""))
+  (lib (name "Amphenol_QT")(type "KiCad")(uri "${KIPRJMOD}/footprints/QT02ADP83H0000G.kicad_sym")(options "")(descr ""))
 )
