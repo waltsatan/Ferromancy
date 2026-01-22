@@ -152,12 +152,12 @@ void loop2() {}
 
 void loop(void)
 {
-  //sendInt('L',0);
   //sendInt('L',a);
-  /*sendInt('L',255);
-  delay(500);
+  sendInt('L',500);
+  delay(200);
   sendInt('L',0);
-  delay(1500);*/
+  
+  delay(500);
   a++;
 
   //temp = receiveInt('T');     // See function definition
