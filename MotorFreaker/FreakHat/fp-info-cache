@@ -1,11 +1,4 @@
-26881687438637080
-Amphenol_QT
-QT02ADP83H0000G
-QT02ADP83H0000G-4
-Connector
-0
-4
-4
+26879918583410157
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -60248,6 +60241,13 @@ emi filter
 0
 5
 5
+FreakHat
+DIN5_MIDI
+
+
+0
+9
+6
 Fuse
 FuseHolder_Blade_ATO_Littelfuse_FLR_178.6165
 Littelfuse fuse holder for ATO/FKS blade fuses, 80V, vertical, 20 x 6mm, PCB thickness up to 1.5mm, http://www.littelfuse.com/~/media/commercial-vehicle/datasheets/automotive-fuse-holders/ato/littelfuse-fuse-holder-ato-flr-pcb-datasheet.pdf
@@ -106483,10 +106483,3 @@ Varistor VF
 0
 2
 2
-zz
-1548376
-1548376-2
-Connector
-0
-4
-4

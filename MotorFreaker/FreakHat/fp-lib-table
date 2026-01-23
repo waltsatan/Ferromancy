@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "FreakHat")(type "KiCad")(uri "${KIPRJMOD}/FreakHat.pretty")(options "")(descr ""))
+)

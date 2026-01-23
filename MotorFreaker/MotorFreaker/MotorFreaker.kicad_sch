@@ -5513,7 +5513,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "DIODE"
+		(property "Value" "1N5401"
 			(at 190.5 129.5399 90)
 			(effects
 				(font
