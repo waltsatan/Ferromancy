@@ -122,7 +122,7 @@ void loop() {
   sendInt('L',a2, A1);
   a1++;
   a2++;
- // a2++;
+  a2++;
   last=millis();
   }
   //delay(10);

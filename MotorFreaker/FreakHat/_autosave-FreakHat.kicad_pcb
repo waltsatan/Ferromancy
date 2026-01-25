@@ -1764,7 +1764,7 @@
 	(footprint "Resistor_THT:R_Array_SIP9"
 		(layer "F.Cu")
 		(uuid "8211c668-4eb7-468e-bce8-5c472bc0af26")
-		(at 94.488 36.322)
+		(at 94.488 36.322 180)
 		(descr "9-pin Resistor SIP pack")
 		(tags "R")
 		(property "Reference" "RN1"
@@ -1883,7 +1883,7 @@
 			)
 		)
 		(pad "1" thru_hole rect
-			(at 0 0)
+			(at 0 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1894,7 +1894,7 @@
 			(uuid "cd510350-a8be-4c20-a765-9f8fecf5f740")
 		)
 		(pad "2" thru_hole circle
-			(at 2.54 0)
+			(at 2.54 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1905,7 +1905,7 @@
 			(uuid "f19898b4-dc04-4385-946c-546f334f24ef")
 		)
 		(pad "3" thru_hole circle
-			(at 5.08 0)
+			(at 5.08 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1916,7 +1916,7 @@
 			(uuid "12649b8e-bcfe-49df-b5c0-af9cb727b64d")
 		)
 		(pad "4" thru_hole circle
-			(at 7.62 0)
+			(at 7.62 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1927,7 +1927,7 @@
 			(uuid "58e7c54c-aba4-4ce3-9054-8ff26e0568a1")
 		)
 		(pad "5" thru_hole circle
-			(at 10.16 0)
+			(at 10.16 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1938,7 +1938,7 @@
 			(uuid "5406423c-46f7-4396-8929-c9e6bc6fa94f")
 		)
 		(pad "6" thru_hole circle
-			(at 12.7 0)
+			(at 12.7 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1949,7 +1949,7 @@
 			(uuid "3cfdd5f7-4e1b-4859-a21d-86914f5028ee")
 		)
 		(pad "7" thru_hole circle
-			(at 15.24 0)
+			(at 15.24 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1960,7 +1960,7 @@
 			(uuid "f9c37329-0d4f-4422-b34f-4394962ce92b")
 		)
 		(pad "8" thru_hole circle
-			(at 17.78 0)
+			(at 17.78 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
@@ -1971,7 +1971,7 @@
 			(uuid "1b0b09ef-70ac-4068-9f7e-74709108d53a")
 		)
 		(pad "9" thru_hole circle
-			(at 20.32 0)
+			(at 20.32 0 180)
 			(size 1.6 1.6)
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
